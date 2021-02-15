@@ -40,7 +40,6 @@ public class Student implements Serializable {
     @Column(name = "photo_url")
     private String photoUrl;
 
-    @NotNull(message = "El país no puede estar vacío")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -49,7 +48,6 @@ public class Student implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @NotNull(message = "El lenguaje no puede estar vacío")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "language_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
