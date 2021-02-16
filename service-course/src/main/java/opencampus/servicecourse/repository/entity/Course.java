@@ -26,15 +26,13 @@ public class Course implements Serializable {
     @Column(name = "course_name")
     private String name;
 
-    @NotEmpty(message = "El nombre de la institución no puede estar vacío")
     @Column(name = "institution_name")
     private String institutionName;
 
     private String description;
 
-    @NotEmpty(message = "La cantidad de horas no pueden estar vacias")
     @Positive(message = "La cantidad de horas deben ser mayor que cero")
-    private Double hours;
+    private int hours;
 
     @Column(name = "begin_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -44,7 +42,6 @@ public class Course implements Serializable {
 
     private String edition;
 
-    @NotEmpty(message = "El costo del curso no puede estar vacío")
     @Positive(message = "La cantidad de horas deben ser mayor que cero")
     private Double cost;
 

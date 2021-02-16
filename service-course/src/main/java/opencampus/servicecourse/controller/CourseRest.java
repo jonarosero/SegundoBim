@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/courses")
 public class CourseRest {
+
     @Autowired
     CourseService courseService;
 
@@ -43,7 +44,7 @@ public class CourseRest {
     }
 
     //-----------------------ENCONTRAR CURSOS------------------------------
-    @GetMapping
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Course> getCourse(@PathVariable("id") Long id){
         log.info("Buscando curso con id {}", id);
         Course course = courseService.getCourse(id);

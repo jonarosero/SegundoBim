@@ -1,14 +1,17 @@
 package opencampus.servicecourse.service;
 
+import lombok.RequiredArgsConstructor;
 import opencampus.servicecourse.repository.CourseRepository;
 import opencampus.servicecourse.repository.entity.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-public class CourseServiceImpl implements CourseService
-{
+@Service
+@RequiredArgsConstructor
+public class CourseServiceImpl implements CourseService {
     @Autowired
     CourseRepository courseRepository;
 
