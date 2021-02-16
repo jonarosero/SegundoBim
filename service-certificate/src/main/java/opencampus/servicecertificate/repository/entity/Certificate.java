@@ -29,14 +29,9 @@ public class Certificate implements Serializable {
     private Date date;
     private String description;
 
-    @JoinColumn(name = "achievement")
     private String achievement;
 
     private String state;
 
-    @PrePersist
-    public void prePersist(){
-        this.date = new Date();
-    }
 
 }

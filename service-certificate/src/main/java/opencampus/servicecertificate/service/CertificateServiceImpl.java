@@ -47,17 +47,11 @@ public class CertificateServiceImpl implements CertificateService{
         if (certificateDB != null){
             return certificateDB;
         }
+        certificate.setState("CREATED");
         certificate.setDate(new Date());
-        certificateDB.setAchievement(certificate.getAchievement());
-        certificateDB.setCode(certificate.getCode());
-        certificateDB.setCode(certificate.getCode());
-        certificateDB.setDescription(certificate.getDescription());
-        certificateDB.setDate(certificate.getDate());
-        certificateDB.setCourseId(certificate.getCourseId());
-        certificateDB.setStudentId(certificate.getStudentId());
-        certificateDB.setState("CREATED");
+        certificate = certificateRepository.save(certificate);
 
-        return certificateRepository.save(certificateDB);
+        return certificateDB;
     }
 
     @Override

@@ -1,1 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    user:
+      name: root
+      password: secret
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jonarosero/SegundoBim.git
+          search-paths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
 
