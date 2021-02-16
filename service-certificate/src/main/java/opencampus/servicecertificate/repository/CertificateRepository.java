@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface CertificateRepository extends JpaRepository<Certificate, Long> {
     public List<Certificate> findByStudentId (Long studentId);
+    public List<Certificate> findByCourseId (Long courseId);
     public Certificate findByCode(String code);
 
 }

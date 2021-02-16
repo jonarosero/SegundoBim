@@ -9,11 +9,11 @@ import java.util.List;
 public interface CertificateService {
 
     public List<Certificate> findCertificateAll();
-    public List<Certificate> findCertificateByCourse(int courseId);
-    public List<Certificate> findCertificateByStudent(int studentId);
+    public List<Certificate> findCertificateByCourse(Long courseId);
+    public List<Certificate> findCertificateByStudent(Long studentId);
 
     public Certificate createCertificate(Certificate certificate, Student student, Course course);
-    public Certificate updateCertificate(Certificate certificate, Student student, Course course);
+    public Certificate updateCertificate(Certificate certificate);
     public Certificate deleteCertificate(Certificate certificate);
     public Certificate getCertificate(Long id);
     public Certificate getCourseByCode(String code);

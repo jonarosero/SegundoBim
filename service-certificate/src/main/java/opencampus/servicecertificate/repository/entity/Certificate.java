@@ -29,17 +29,11 @@ public class Certificate implements Serializable {
     private Date date;
     private String description;
 
-
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "achivement_id")
-    private List<Achievement> achievements;
+    @JoinColumn(name = "achivement")
+    private String achievement;
 
     private String state;
 
-    public Certificate(){
-        this.achievements = new ArrayList<>();
-    }
     @PrePersist
     public void prePersist(){
         this.date = new Date();
