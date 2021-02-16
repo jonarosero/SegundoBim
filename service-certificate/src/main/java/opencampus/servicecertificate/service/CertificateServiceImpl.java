@@ -42,19 +42,19 @@ public class CertificateServiceImpl implements CertificateService{
     }
 
     @Override
-    public Certificate createCertificate(Certificate certificate, Student student, Course course) {
+    public Certificate createCertificate(Certificate certificate) {
         Certificate certificateDB = getCertificate(certificate.getId());
         if (certificateDB != null){
             return certificateDB;
         }
         certificate.setDate(new Date());
-        certificateDB.setAchievement(validateCertificate(course, certificate).getAchievement());
+        certificateDB.setAchievement(certificate.getAchievement());
         certificateDB.setCode(certificate.getCode());
         certificateDB.setCode(certificate.getCode());
         certificateDB.setDescription(certificate.getDescription());
         certificateDB.setDate(certificate.getDate());
-        certificateDB.setCourseId(course.getId());
-        certificateDB.setStudentId(student.getId());
+        certificateDB.setCourseId(certificate.getCourseId());
+        certificateDB.setStudentId(certificate.getStudentId());
         certificateDB.setState("CREATED");
 
         return certificateRepository.save(certificateDB);
@@ -91,16 +91,5 @@ public class CertificateServiceImpl implements CertificateService{
         return certificateRepository.findByCode(code);
     }
 
-    @Override
-    public Certificate validateCertificate(Course course, Certificate certificate) {
-        int totalHours = (int)(course.getDate().getTime() - certificate.getDate().getTime());
-        if (totalHours >= course.getHours()){
-            certificate.setAchievement("Aprobado con Honores");
-            return certificate;
-        }else if (course.getHours() == totalHours){
-            certificate.setAchievement("Aprobado");
-            return certificate;
-        }
-        return certificate;
-    }
+
 }

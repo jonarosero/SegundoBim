@@ -12,11 +12,10 @@ public interface CertificateService {
     public List<Certificate> findCertificateByCourse(Long courseId);
     public List<Certificate> findCertificateByStudent(Long studentId);
 
-    public Certificate createCertificate(Certificate certificate, Student student, Course course);
+    public Certificate createCertificate(Certificate certificate);
     public Certificate updateCertificate(Certificate certificate);
     public Certificate deleteCertificate(Certificate certificate);
     public Certificate getCertificate(Long id);
     public Certificate getCourseByCode(String code);
 
-    public Certificate validateCertificate(Course course, Certificate certificate);
 }

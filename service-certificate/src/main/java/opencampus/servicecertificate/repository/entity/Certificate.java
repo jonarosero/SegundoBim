@@ -29,7 +29,7 @@ public class Certificate implements Serializable {
     private Date date;
     private String description;
 
-    @JoinColumn(name = "achivement")
+    @JoinColumn(name = "achievement")
     private String achievement;
 
     private String state;
