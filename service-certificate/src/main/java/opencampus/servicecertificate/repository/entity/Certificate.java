@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class Certificate implements Serializable {
 
     private String state;
 
+    public Certificate(){
+        this.achievements = new ArrayList<>();
+    }
     @PrePersist
     public void prePersist(){
         this.date = new Date();

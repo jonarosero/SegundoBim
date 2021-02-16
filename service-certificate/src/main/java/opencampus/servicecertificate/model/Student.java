@@ -10,7 +10,7 @@ public class Student {
     private String lastName;
     private String email;
     private String photoUrl;
-    private int regionId;
+    private Region region;
     private String description;
-    private int languageId;
+    private Language language;
 }
