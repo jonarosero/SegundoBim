@@ -1,0 +1,44 @@
+package opencampus.servicecertificate.repository.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+@Data
+@Entity
+@Table(name = "tbl_certificates")
+public class Certificate implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String code;
+
+    @Column(name = "student_id")
+    private Long studentId;
+
+    @Column(name = "course_id")
+    private Long courseId;
+    @Column(name = "finish_at")
+    private Date date;
+    private String description;
+
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "achivement_id")
+    private List<Achievement> achievements;
+
+    private String state;
+
+    @PrePersist
+    public void prePersist(){
+        this.date = new Date();
+    }
+
+}
