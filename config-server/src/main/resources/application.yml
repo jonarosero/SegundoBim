@@ -2,12 +2,11 @@ server:
   port: 8888
 
 spring:
+
   profiles:
-    active: native
+    active: [native, local]
   cloud:
     config:
       server:
         native:
           searchLocations: ${HOME}/config-data
-        source:
-          foo: bar
