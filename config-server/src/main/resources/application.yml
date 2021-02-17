@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8888
 
 spring:
   profiles:
@@ -9,8 +9,5 @@ spring:
       server:
         native:
           searchLocations: ${HOME}/config-data
-
-#spring.cloud.config.server.git.uri=file:////C:/Users/Compumars/Desktop/SegundoBim/config-data
-
-#spring.cloud.config.server.native.search-locations=file:////C://Users/Compumars/Desktop/SegundoBim/config-data
-#spring.cloud.config.server.native.bootstrap:true
+        source:
+          foo: bar

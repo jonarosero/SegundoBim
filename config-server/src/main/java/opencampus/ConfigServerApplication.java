@@ -1,8 +1,7 @@
-package com.example.config;
+package opencampus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 
