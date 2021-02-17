@@ -2,6 +2,8 @@ package opencampus.servicecertificate.repository.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import opencampus.servicecertificate.model.Course;
+import opencampus.servicecertificate.model.Student;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,6 +32,12 @@ public class Certificate implements Serializable {
     private String description;
 
     private String achievement;
+
+    @Transient
+    private Course course;
+
+    @Transient
+    private Student student;
 
     private String state;
 

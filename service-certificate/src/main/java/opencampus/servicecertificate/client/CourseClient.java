@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface CourseClient {
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Course> getCourse(@PathVariable("id") long id);
+    public ResponseEntity<Course> getCourse(@PathVariable("id") Long id);
 }
